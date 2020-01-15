@@ -2,6 +2,7 @@ const http = require('http');
 const https = require('https');
 const url = require('url');
 const StringDecoder = require('string_decoder').StringDecoder;
+const config  = require('./config');
 
 var serverHttp = http.createServer(function(req,res){
 
@@ -60,7 +61,7 @@ var router = {
     'hello': handler.hello()
 }
 
-serverHttp.listen(3000, function(){
+serverHttp.listen(config.port, function(){
     console.log("listening on port 3000")
 });
 
